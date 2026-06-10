@@ -16,6 +16,7 @@ npm install @jonathanleonel/kb-rag
 A B2B SaaS platform for e-commerce sellers needs to automate responses to buyer questions on MercadoLibre.
 
 Each seller has a **response manual** containing:
+
 - Basic seller info and tone guidelines
 - Shipping policies
 - Return and exchange policies
@@ -24,6 +25,7 @@ Each seller has a **response manual** containing:
 **Phase 1 — naive approach:** wrap the Claude API, pass the entire manual + the buyer's question as a prompt, return the answer.
 
 This works but has two problems at scale:
+
 1. Every request sends the full manual — token cost grows linearly with manual size
 2. Most of the manual is irrelevant to any given question — shipping policy doesn't help answer a question about product dimensions
 
@@ -44,6 +46,7 @@ envios, cambios_devoluciones, garantia, faq_producto, seccion_libre
 ```
 
 Before building the final prompt, the system:
+
 1. Splits these sections into **chunks**
 2. Converts each chunk into a **vector embedding** — a 384-dimensional representation of its semantic meaning
 3. At query time, embeds the buyer's question using the same model
@@ -84,11 +87,11 @@ Since both vectors are unit vectors (L2 norm = 1), dot product is equivalent to 
 
 Evaluated against the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard) filtering by Semantic Textual Similarity tasks and model size.
 
-| Model | Dims | Params | License | Notes |
-|-------|------|--------|---------|-------|
-| `all-MiniLM-L6-v2` | 384 | 22M | Apache 2.0 | ✓ chosen |
-| `all-mpnet-base-v2` | 768 | 109M | Apache 2.0 | better quality, 5× larger |
-| `text-embedding-ada-002` | 1536 | — | proprietary | requires API key |
+| Model                    | Dims | Params | License     | Notes                     |
+| ------------------------ | ---- | ------ | ----------- | ------------------------- |
+| `all-MiniLM-L6-v2`       | 384  | 22M    | Apache 2.0  | ✓ chosen                  |
+| `all-mpnet-base-v2`      | 768  | 109M   | Apache 2.0  | better quality, 5× larger |
+| `text-embedding-ada-002` | 1536 | —      | proprietary | requires API key          |
 
 `all-MiniLM-L6-v2` was fine-tuned specifically for sentence similarity tasks (MS MARCO + NLI datasets) — not a base model adapted post-hoc. For a bounded corpus like a seller manual (tens to hundreds of chunks), 384 dimensions provide sufficient semantic granularity. The quality/size tradeoff is conscious and documented.
 
@@ -121,6 +124,7 @@ src/
 ```
 
 **Rules:**
+
 - `core/` has zero external dependencies
 - Each adapter implements exactly one port, no business logic
 - Use cases receive dependencies injected — they never instantiate adapters directly
@@ -142,4 +146,4 @@ src/
 
 ## Production context
 
-Extracted from [DataClara](https://github.com/JonathanLeonel/data-clara) — a multi-tenant SaaS platform for MercadoLibre sellers built with Next.js 14, TypeScript, and PostgreSQL.
+Extracted from [DataClara] — a multi-tenant SaaS platform for e-commerce sellers.
