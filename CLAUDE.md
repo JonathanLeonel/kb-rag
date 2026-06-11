@@ -107,3 +107,4 @@ Can be called at any point, with a reason.
 - If tests don't exist for what you built, write them.
 - Do not touch infrastructure, CI config, or deployment files unless the spec explicitly requires it.
 - If you have a better idea, note it as a comment to the user — do not implement it.
+- Never commit unless the user explicitly asks. Stage files if needed, but wait for the user to say "commit" before running `git commit`.
