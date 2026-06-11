@@ -1,0 +1,37 @@
+[
+  {
+    "id": "business_info_001",
+    "source": "business_info",
+    "heading": "About PeakGear Sports",
+    "content": "PeakGear Sports is a fictional retailer specializing in outdoor and athletic equipment. We carry climbing gear, trail running shoes, cycling accessories, and team sports supplies. Our store is open Monday–Saturday, 9 AM–7 PM.",
+    "embedding": [1, 0, 0, 0, 0]
+  },
+  {
+    "id": "shipping_001",
+    "source": "shipping",
+    "heading": "Shipping Policy",
+    "content": "PeakGear Sports offers free standard shipping on orders over $75. Standard delivery takes 5–7 business days. Express shipping (2 business days) is available for an additional $12.99. Orders placed before 2 PM ship the same day.",
+    "embedding": [0, 1, 0, 0, 0]
+  },
+  {
+    "id": "returns_001",
+    "source": "returns",
+    "heading": "Returns & Exchanges",
+    "content": "Items may be returned within 30 days of purchase in original, unused condition with tags attached. Sale items are final sale. To start a return, visit our website or bring the item in-store with your receipt.",
+    "embedding": [0, 0, 1, 0, 0]
+  },
+  {
+    "id": "warranty_001",
+    "source": "warranty",
+    "heading": "Product Warranty",
+    "content": "All PeakGear-branded equipment carries a 1-year limited warranty against manufacturing defects. Third-party brands are covered under their respective manufacturer warranties. Warranty does not cover normal wear, misuse, or accidental damage.",
+    "embedding": [0, 0, 0, 1, 0]
+  },
+  {
+    "id": "product_faq_001",
+    "source": "product_faq",
+    "heading": "Product FAQ",
+    "content": "Q: Are your climbing harnesses UIAA certified? A: Yes, all harnesses sold at PeakGear meet UIAA and CE EN 12277 standards. Q: Do you carry half sizes in trail shoes? A: Most trail running shoe models are available in half sizes up to size 13.",
+    "embedding": [0, 0, 0, 0, 1]
+  }
+]
