@@ -20,8 +20,8 @@ Receive a spec path (e.g. `execute specs/0001-session-timeout.md`).
 **Step 1 — Read the spec.**
 Read it fully. Extract the frontmatter (card_id, board_id) and every file, path, and component it references.
 
-**Step 2 — Move the card to Executing.**
-Use the Trello MCP to move the card (card_id from frontmatter) to the Executing column.
+**Step 2 — Move the card to Coding.**
+Use the Trello MCP to move the card (card_id from frontmatter) to the Coding column.
 
 **Step 3 — Validate against the current project (spec drift check).**
 For each file or path mentioned in the spec, check if it exists in the project.
@@ -55,6 +55,11 @@ Do not proceed to step 6 until the branch exists and the spec is committed.
 
 **Step 6 — Implement.**
 Build exactly what the approved plan describes. Nothing more.
+
+For TDD specs:
+- Write tests + data files first (red state). Do **not** commit the red state automatically — wait for the user to say "commit" if they want it recorded.
+- Present the green implementation to the user before writing it. Wait for human validation ("dale", "seguí", etc.) before implementing.
+- Only commit when the user explicitly asks.
 
 ---
 
